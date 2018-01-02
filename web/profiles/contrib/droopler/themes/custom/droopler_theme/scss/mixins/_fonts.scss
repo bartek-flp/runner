@@ -1,0 +1,84 @@
+// Fonts and typography.
+//
+// Styleguide 1.3
+
+// Colour variables
+$font-button-color: $color-odysseus !default;
+
+//@TODO Mojority of these mixins should really be distributed to the components they refer to.
+// I know this might cause duplication to some extend but here we should only have generic ones
+// (@font-footer-body is not too generic.
+// Here we could rather have @h2 @h3 or @ul general theming
+
+$font-main-header-size: 3rem;
+$font-main-header-size-down: 2rem;
+@mixin font-main-header {
+  font-size: $font-main-header-size;
+  font-weight: bold;
+  text-align: center;
+  @include media-breakpoint-down(md) {
+    font-size: $font-main-header-size-down;
+  }
+}
+
+$font-main-header-big-size: 3.44rem;
+$font-main-header-big-size-down-md: 2.5rem;
+$font-main-header-big-size-down-sm: 2.5rem;
+@mixin font-main-header-big {
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  font-size: $font-main-header-big-size;
+  @include media-breakpoint-down(md) {
+    font-size: $font-main-header-big-size-down-md;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: $font-main-header-big-size-down-sm;
+  }
+}
+
+
+
+@mixin font-subtitle {
+  font-size: $font-size-mdlg;
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-sm;
+  }
+}
+
+@mixin font-button {
+  font-size: $font-size-mdsm;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $font-button-color;
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-vsm;;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+@mixin font-body-standard {
+  font-size: $font-size-base;
+  @include media-breakpoint-down(md) {
+    font-size: $font-size-mdsm;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-sm;
+  }
+}
+
+@mixin font-links {
+  font-size: $font-size-base;
+}
+
+@mixin text-transform($transform: none) {
+  @if $transform == none {
+    // we transform up only
+    // if you have to transfer to none somewhere
+    // then this is a but, please report
+  } @else {
+    text-transform: $transform;
+  }
+}

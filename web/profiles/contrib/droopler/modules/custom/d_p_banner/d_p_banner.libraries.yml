@@ -1,0 +1,9 @@
+d_p_banner:
+  version: VERSION
+  js:
+    js/d_p_banner.js: {}
+  dependencies:
+    - droopler_theme/jquery-backstretch
+    - core/jquery
+    - core/jquery.once
+    - core/drupal

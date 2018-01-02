@@ -1,0 +1,67 @@
+/*
+Subscribe paragraph
+
+Styleguide 2.10
+*/
+
+// Colour variables used in this paragraph
+$d-p-subscribe-file-color: $color-odysseus !default;
+$d-p-subscribe-file-background: $color-agamemnon !default;
+
+.d-p-subscribe-file-form {
+  margin-left: 11%;
+  margin-top: 35px;
+  margin-bottom: 20px;
+
+  .form-control {
+    border: none;
+  }
+
+  @include make-inline-form;
+  fieldset.form-item-name {
+    max-width: 210px;
+    margin-right: 20px;
+  }
+  fieldset.form-item-mail {
+    max-width: 350px;
+    margin-right: 20px;
+  }
+  @include media-breakpoint-down(lg) {
+    margin-left: 3%;
+    fieldset.form-item-mail {
+      max-width: 300px;
+      margin-right: 20px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    max-width: 500px;
+    margin: 3% auto;
+    fieldset.form-item-name, fieldset.form-item-mail {
+      max-width: 100%;
+      margin-right: 0;
+    }
+    .button {
+     // width: 100%;
+    }
+  }
+}
+
+.subscribe_file {
+  color: $d-p-subscribe-file-color;
+  z-index: 0;
+  padding: 8% 0;
+  background: $d-p-subscribe-file-background;
+  img {
+    opacity: 0.4;
+  }
+  h2 {
+    @include font-main-header;
+    &:after {
+      @include decoration-header-line-main-center;
+      margin-top: 23px;
+    }
+  }
+  p {
+    text-align: center;
+  }
+}

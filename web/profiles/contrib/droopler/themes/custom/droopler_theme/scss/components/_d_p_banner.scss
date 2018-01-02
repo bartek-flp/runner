@@ -1,0 +1,62 @@
+/*
+Components Banner
+
+Styleguide 2.banner
+*/
+
+// Colour variables used in this paragraph
+$d-p-banner-text-color: $color-odysseus !default;
+$d-p-banner-background-overlay: $color-cassandra !default;
+$d-p-banner-subtitle-background: $color-odysseus !default;
+
+.d-p-banner {
+  background: $d-p-banner-background-overlay;
+  color: $d-p-banner-text-color;
+  z-index: 0;
+  h2 {
+    @include font-main-header-big;
+  }
+  h3 {
+    @include font-subtitle;
+    text-align: center;
+    &:after {
+      @include decoration-header-line-main-center;
+      background: $d-p-banner-subtitle-background;
+    }
+  }
+  p {
+    @include font-body-standard;
+    text-align: center;
+    line-height: 1.7;
+  }
+  a {
+    @extend .btn-orange;
+    margin-top: 70px;
+  }
+  img {
+    opacity: 0.5;
+    @include media-breakpoint-down(sm) {
+      max-width: none;
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+  .content-wrapper {
+    width: 100%;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    @include media-breakpoint-down(sm) {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+  }
+}
+.path-frontpage {
+  .d-p-banner {
+    .content-wrapper {
+      width: 100%;
+      padding-top: 300px;
+      padding-bottom: 300px;
+    }
+  }
+}

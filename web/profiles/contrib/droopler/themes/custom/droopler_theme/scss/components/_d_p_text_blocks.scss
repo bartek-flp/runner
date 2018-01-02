@@ -1,0 +1,75 @@
+/*
+Components Boxes
+
+Styleguide 2.8
+*/
+
+// Colour variables used in this paragraph
+$d-p-single-box-text-color: $color-hecuba !default;
+$d-p-text-blocks-underline-color: $color-agamemnon !default;
+$d-p-text-blocks-background: $color-agamemnon !default;
+$d-p-single-text-box-cta-text-transform: uppercase !default;
+
+
+@mixin font-title-single-box {
+  font-size: $font-size-lg;
+  font-weight: bold;
+  text-align: left;
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-mdlg;
+  }
+}
+
+
+
+
+.d-p-group-of-text-blocks {
+  & > h2 {
+    @include font-main-header;
+    margin: 124px 0 88px;
+    @include media-breakpoint-down(md) {
+      margin: 65px 0 45px;
+    }
+    &:after {
+      @include decoration-header-line-main-center;
+      background: $d-p-text-blocks-underline-color;
+      margin: 10px auto;
+    }
+  }
+  > .field--type-link a {
+    @extend .btn-orange;
+    margin: 50px auto 145px;
+    @include media-breakpoint-down(md) {
+      margin: 30px auto 70px;
+    }
+  }
+}
+
+.single-box-wrapper {
+  @include media-breakpoint-up(lg) {
+      &:nth-child(3n+2) {
+        padding-left: 60px;
+      }
+      &:nth-child(3n+3) {
+        padding-left: 80px;
+      }
+  }
+}
+.d-p-text-block {
+  margin-bottom: 15%;
+  h2 {
+    @include font-title-single-box;
+    &:after {
+      @include decoration-header-line;
+      background: $d-p-text-blocks-background;
+    }
+  }
+  p {
+    @include font-body-standard;
+    color: $d-p-single-box-text-color;
+  }
+  a {
+    @include text-transform($d-p-single-text-box-cta-text-transform)
+
+  }
+}

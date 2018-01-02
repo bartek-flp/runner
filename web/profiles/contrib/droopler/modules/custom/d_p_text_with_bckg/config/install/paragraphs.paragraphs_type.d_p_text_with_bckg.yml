@@ -1,0 +1,6 @@
+langcode: pl
+status: true
+dependencies: {  }
+id: d_p_text_with_bckg
+label: 'Text with image background'
+behavior_plugins: {  }

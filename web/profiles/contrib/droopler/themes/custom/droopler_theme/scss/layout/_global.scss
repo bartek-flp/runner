@@ -1,0 +1,69 @@
+// Global.
+//
+// Styleguide 3.1
+
+// Colour variables
+$light-gray-background: $color-hector !default;
+body {
+  margin-top: -10px;
+}
+#main {
+  margin-top: 0;
+  .node__content {
+    margin-top: 0;
+  }
+}
+.page-wrapper {
+  min-width: 320px;
+  img {
+    max-width: 100%;
+  }
+  main.main-content {
+    width: 100%;
+    margin-top: 133px;
+  }
+  h1 {
+    @include font-main-header-big;
+  }
+  h2 {
+    @include font-main-header;
+  }
+  h3 {
+    @include font-subtitle;
+  }
+  p {
+    @include font-body-standard;
+  }
+  a {
+    @include font-links;
+  }
+}
+.no-padding {
+  padding: 0;
+  @include media-breakpoint-down(sm) {
+    &-sm {
+      padding: 0;
+    }
+  }
+}
+
+.alert {
+  @extend .container;
+}
+
+.background {
+  &-gray-light {
+    background: $light-gray-background;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+.path-frontpage {
+  .page-wrapper {
+    main.main-content {
+      margin-top: 0;
+    }
+  }
+}

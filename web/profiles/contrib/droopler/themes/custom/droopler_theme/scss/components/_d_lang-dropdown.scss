@@ -1,0 +1,133 @@
+/*
+Components Lang switcher
+
+Styleguide 2.2
+*/
+
+// Colour variables used in this component.
+$lang-dropdown-header-color: $color-priam !default;
+$lang-dropdown-toggle-color: $color-hector !default;
+$lang-dropdown-link-color: $menu-main-link !default;
+$lang-dropdown-link-hover-color: $menu-main-link-hover !default;
+$lang-dropdown-link-active-color: $menu-main-link-active !default;
+$lang-dropdown-mobile-background: $color-troilus !default;
+$lang-dropdown-mobile-link-color: $color-priam !default;
+$lang-dropdown-mobile-link-hover-color: lighten($lang-dropdown-mobile-link-color, 5%) !default;
+$lang-dropdown-mobile-header-color: $color-odysseus !default;
+
+@mixin font-lang-switcher-links {
+  font-size: $font-size-mdsm;
+  color: $lang-dropdown-link-color;
+  text-transform: uppercase;
+  &:hover, &:focus {
+    color: $lang-dropdown-link-hover-color;
+  }
+  &:active {
+    color: $lang-dropdown-link-active-color;
+  }
+}
+
+.block-language {
+  color: $lang-dropdown-header-color;
+  @include media-breakpoint-up(lg) {
+    &.dropdown {
+      width: 135px;
+      .dropdown-toggle {
+        text-transform: uppercase;
+        text-align: right;
+        vertical-align: middle;
+        cursor: pointer;
+        padding-right: 30px;
+        font-size: 20px;
+        color: $lang-dropdown-header-color;
+        &:after {
+          color: $lang-dropdown-toggle-color;
+          font-family: "fontello";
+          display: inline-block;
+          width: 0;
+          content: "\e804";
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          font-size:40px;
+          right: 15px;
+          float: right;
+          top: -16px;
+          position: absolute;
+        }
+        &-down {
+          &:after {
+            content: "\e806";
+          }
+        }
+      }
+      .dropdown-menu {
+        cursor: pointer;
+        padding: 0;
+        left: -57px;
+        top: -10px;
+        li {
+          &:first-child, a {
+            text-transform: uppercase;
+            padding: 10px 120px 10px 25px;
+            display: block;
+          }
+          &:nth-child(1):after {
+            content: "\e806";
+            color: $lang-dropdown-toggle-color;
+            font-family: "fontello";
+            display: inline-block;
+            width: 0;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            font-size: 40px;
+            right: 35px;
+            float: right;
+            top: -10px;
+            position: absolute;
+          }
+          a {
+            @include font-lang-switcher-links;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .active-lang-code {
+      display: none;
+    }
+    .dropdown-menu {
+      position: relative;
+      top: 100%;
+      left: 0;
+      z-index: 200;
+      display: block;
+      float: none;
+      min-width: 10rem;
+      padding: 20px;
+      margin: 0;
+      text-align: center;
+      width: 100%;
+      background-color: $lang-dropdown-mobile-background;
+      border: 0;
+      border-radius: 0;
+      li {
+        text-transform: uppercase;
+        &:first-child {
+          color: $lang-dropdown-mobile-header-color;
+          padding: 10px;
+        }
+        a {
+          display: block;
+          color: $lang-dropdown-mobile-link-color;
+          padding: 10px;
+          &:hover {
+            color: $lang-dropdown-mobile-link-hover-color;
+          }
+        }
+      }
+    }
+  }
+}

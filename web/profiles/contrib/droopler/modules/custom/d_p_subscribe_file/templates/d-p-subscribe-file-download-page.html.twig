@@ -1,0 +1,9 @@
+<div class="download-page">
+  <div class="container">
+    <h2>{{ title }}</h2>
+    {% if link %}
+      <a href="{{ link.url }}" class="btn btn-primary">{{ link.text }}</a>
+    {% endif %}
+    <p class="additional">{{ body }}</p>
+  </div>
+</div>

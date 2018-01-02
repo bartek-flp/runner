@@ -1,0 +1,78 @@
+/*
+Components Image Side Banner
+
+Styleguide 2.image-slide-banner
+
+*/
+
+// Colour variables used in this paragraph
+$d-p-side-image-banner-background-color: $color-agamemnon !default;
+$d-p-side-image-banner-background-color-secondary: darken($d-p-side-image-banner-background-color, 15%) !default;
+$d-p-side-image-banner-text-color: $color-odysseus !default;
+$d-p-side-image-banner-link-color: $color-nestor !default;
+$d-p-side-image-banner-link-hover-color: darken($d-p-side-image-banner-link-color, 5%) !default;
+
+.d-p-side-image-banner {
+  color: $d-p-side-image-banner-text-color;
+  h2 {
+    @include font-main-header;
+    text-align: left;
+    &:after {
+      @include decoration-header-line;
+      margin-top: 23px;
+    }
+  }
+  a {
+    color: $d-p-side-image-banner-link-color;
+    &:hover {
+      color: $d-p-side-image-banner-link-hover-color;
+    }
+  }
+  .d-image {
+    padding: 0;
+    @include media-breakpoint-down(sm) {
+      height: 300px !important;
+    }
+  }
+  .container-half {
+    padding: 7%;
+  }
+  .image-side {
+    &-right {
+      background: $d-p-side-image-banner-background-color;
+    }
+    &-left {
+      background: $d-p-side-image-banner-background-color-secondary;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .container-half {
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: ($grid-gutter-width / 2);
+      padding-left: ($grid-gutter-width / 2);
+      width: 570px;
+    }
+    .image-side {
+      &-right {
+        .d-image {
+          float: right;
+        }
+        .container-half {
+          padding-right: 5%;
+          float: right;
+        }
+      }
+      &-left {
+        .d-image {
+          float: left;
+        }
+        .container-half {
+          padding-left: 5%;
+          float: left;
+        }
+      }
+    }
+  }
+}

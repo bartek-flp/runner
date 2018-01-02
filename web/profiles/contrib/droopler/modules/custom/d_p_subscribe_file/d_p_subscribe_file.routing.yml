@@ -1,0 +1,19 @@
+d_p_subscribe_file.downloadfile.checkLink:
+  path: '/downloadfile/{link_hash}'
+  defaults: 
+    _controller: '\Drupal\d_p_subscribe_file\Controller\DownloadFile::checkLink'
+    _title: 'Download'
+  requirements: 
+    _permission: 'access content'
+  link_hash: '^[a-zA-Z0-9_]+'
+  cache: FALSE
+
+d_p_subscribe_file.downloadfile.getFile:
+  path: '/getfile/{file_hash}'
+  defaults:
+    _controller: '\Drupal\d_p_subscribe_file\Controller\DownloadFile::getFile'
+    _title: 'Download'
+  requirements:
+    _permission: 'access content'
+  file_hash: '^[a-zA-Z0-9_]+'
+  cache: FALSE

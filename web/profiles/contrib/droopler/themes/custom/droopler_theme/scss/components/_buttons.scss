@@ -1,0 +1,38 @@
+/*
+Components Buttons, links
+
+Styleguide 2.banner.celina
+*/
+
+// Colour variables used in this component.
+$button-main-background: $color-achillies !default;
+$button-main-border: darken($button-main-background, 5%) !default;
+$button-main-hover-background: darken($button-main-background, 5%) !default;
+$button-main-hover-border: darken($button-main-background, 5%) !default;
+$button-main-hover-shadow: $button-main-background !default;
+
+.btn {
+  &-primary,
+  &-orange {
+    background: $button-main-background;
+    @include font-button;
+    min-width: 296px;
+    display: table;
+    cursor: pointer;
+    padding: 16px;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 1.3px;
+    border-radius: 0;
+    border-color: $button-main-border;
+    &:hover, &:focus  {
+      background: $button-main-hover-background;
+      border-color: $button-main-hover-border;
+      box-shadow: 0 0 0 2px $button-main-hover-shadow;
+    }
+    @include media-breakpoint-down(sm) {
+      min-width: 260px;
+      padding: 14px;
+    }
+  }
+}
