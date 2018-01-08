@@ -1,0 +1,32 @@
+/*
+Text page
+
+Styleguide 2.banner.calina
+*/
+
+// Colour variables used in this paragraph
+$d-p-blog-subtitle-text-color: $color-agamemnon !default;
+$d-p-blog-subtitle-line-background: $color-agamemnon !default;
+$d-p-blog-text-color: $color-hecuba !default;
+
+.text-page {
+  h2 {
+    margin-top: 5%;
+  }
+  h3 {
+    margin: 18px 0;
+    @include font-subtitle;
+    text-align: center;
+    color: $d-p-blog-subtitle-text-color;
+    &:after {
+      @include decoration-header-line-main-center;
+      background: $d-p-blog-subtitle-line-background;
+      margin: 15px auto;
+    }
+  }
+  p {
+    color: $d-p-blog-text-color;
+  }
+  margin-top: 5%;
+  margin-bottom: 5%;
+}

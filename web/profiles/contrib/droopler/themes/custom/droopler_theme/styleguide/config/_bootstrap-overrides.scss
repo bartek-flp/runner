@@ -1,0 +1,29 @@
+// Bootrap variable override.
+//
+// Styleguide 1.1
+
+
+$grid-gutter-width: 60px !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+) !default;
+
+$font-family-sans-serif: 'Lato', sans-serif !default;
+$font-family-base:       'Lato', sans-serif !default;
+
+
+
+
+//$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+
+$font-size-vlg: 1.375rem !default; //22px
+//$font-size-lg:   1.25rem !default; // 20px
+$font-size-mdlg: 1.125rem !default; //18px
+$font-size-mdsm: 0.94rem !default; //15px
+//$font-size-sm:   .875rem !default;  // 14px
+$font-size-vsm: 0.8125rem !default; //13px
+$font-size-svsm: 0.74rem !default; //13px

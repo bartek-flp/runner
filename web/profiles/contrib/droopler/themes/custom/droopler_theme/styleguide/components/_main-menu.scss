@@ -1,0 +1,195 @@
+/*
+Components Main menu
+
+ul with main menu.
+
+Markup:
+<ul class="nav navbar-nav main-menu">
+  <li class="nav-item active"><a href="/en/node/1" class="nav-link active is-active" data-drupal-link-system-path="node/1">Home</a> </li>
+  <li class="nav-item"><a href="/node/2" class="nav-link">About</a></li>
+  <li class="nav-item"><a href="/node/3" class="nav-link">Services</a></li>
+  <li class="nav-item"><a href="/node/4" class="nav-link">Gallery</a></li>
+  <li class="nav-item"><a href="/node/5" class="nav-link">Contact</a></li>
+</ul>
+
+Styleguide 2.1
+*/
+
+// Colour variables used in this component
+$menu-main-link: $color-priam !default;
+$menu-main-link-hover: darken($color-priam, 20%) !default;
+$menu-main-link-active: darken($color-priam, 20%) !default;
+$menu-main-link-dropdown: $color-hector !default;
+
+$menu-mobile-background: $color-agamemnon !default;
+$menu-mobile-link-color: $color-odysseus !default;
+$menu-mobile-link-border: $color-menelaus !default;
+$menu-mobile-link-hover-background: $color-hector !default;
+
+$navbar-toggler-background: $color-agamemnon !default;
+$navbar-toggler-color: $color-agamemnon !default;
+
+@mixin font-main-menu-links {
+  font-size: $font-size-lg;
+  text-transform: capitalize;
+}
+
+
+.main-menu {
+  .menu-item--expanded {
+    a.nav-link:after {
+      color: $menu-main-link-dropdown;
+      font-family: "fontello";
+      display: inline-block;
+      width: 0;
+      content: "\e804";
+      font-size: 19px;
+      right: -5px;
+      top: 2px;
+      position: relative;
+    }
+    &.show {
+      a.nav-link:after {
+        content: "\e806";
+      }
+    }
+    .dropdown-menu {
+      border: 0;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &.navbar-nav {
+      .nav-link {
+        @include font-main-menu-links;
+        color: $menu-main-link;
+        &:hover, &:focus {
+          color: $menu-main-link-hover;
+        }
+        &:active {
+          color: $menu-main-link-active;
+        }
+        line-height: 4;
+        padding-left: 45px;
+      }
+      .dropdown-menu {
+        .dropdown-item {
+          padding: 0;
+          color: $menu-mobile-link-color;
+          &:active, &:hover {
+            background: $menu-mobile-link-hover-background;
+            a {
+              color: $menu-mobile-link-color;
+            }
+          }
+          a {
+            color: $menu-main-link;
+            padding: 5px 20px;
+            width: 100%;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &.navbar-nav {
+      background: $menu-mobile-background;
+      color: $menu-mobile-link-color;
+      .nav-link {
+        @include font-main-menu-links;
+        color: $menu-mobile-link-color;
+        width: 80%;
+        border-bottom: 2px solid $menu-mobile-link-border;
+        margin: 0 auto;
+        padding: 15px;
+        &:hover, &:focus {
+          color: darken($menu-mobile-link-color, 5%);
+        }
+        &:active {
+          color: darken($menu-mobile-link-color, 5%);
+        }
+        line-height: 1;
+        text-align: center;
+      }
+      .menu-item--expanded {
+        a.nav-link {
+          @include font-main-menu-links;
+          &:after {
+            right: 0;
+            top: 2px;
+            float: right;
+          }
+
+        }
+      }
+      .nav-item:last-child {
+        .nav-link {
+          border-bottom: 0;
+        }
+      }
+    }
+    .dropdown-menu {
+      background: transparent;
+      .dropdown-item {
+        padding: 0;
+        background: $menu-mobile-link-border;
+        a {
+          border-bottom: 1px;
+          text-align: center;
+          color: $menu-mobile-link-color;
+          padding: 5px 20px;
+          width: 100%;
+          display: block;
+        }
+        &:active, &:hover {
+          background: transparent;
+          a {
+            color: $menu-mobile-link-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+button.navbar-toggler {
+  display: none;
+}
+@include media-breakpoint-down(md) {
+  button.navbar-toggler {
+    display: block;
+    z-index: 100;
+    width: 91px;
+    height: 70px;
+    padding: 0;
+    &[aria-expanded="false"] {
+      .navbar-toggler-icon {
+        width: 90px;
+        height: 70px;
+        &:after {
+          font-family: "fontello";
+          content: "\f008";
+          color: $navbar-toggler-color;
+          font-size: 40px;
+          top: 15px;
+          position: relative;
+        }
+      }
+    }
+    &[aria-expanded="true"] {
+      .navbar-toggler-icon {
+        width: 90px;
+        height: 70px;
+        background: $navbar-toggler-background;
+        &:after {
+          font-family: "fontello";
+          content: "\e80e";
+          font-size: 40px;
+          top: 15px;
+          position: relative;
+          color: $menu-mobile-link-color;
+        }
+      }
+    }
+  }
+}
